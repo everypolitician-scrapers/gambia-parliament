@@ -54,7 +54,7 @@ def scrape_person(url)
   data = { 
     id: url.to_s[/id=(\d+)/, 1],
     name: box.css('td.contentheading').text.tidy.sub(/^Hon\.?\s+/, ''),
-    area: area.to_s.tidy.sub(/\s+Constituency$/,''),
+    area: area.to_s.tidy.sub(/\s+Consti[ty]uency.*/i,''),
     party: party.to_s.tidy,
     birth_date: dob,
     image: box.css('img[src*="/members/"]/@src').text,
