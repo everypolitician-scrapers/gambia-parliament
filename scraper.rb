@@ -57,7 +57,7 @@ def scrape_person(url)
     area: area.to_s.tidy.sub(/\s+Consti[ty]uency.*/i,''),
     party: party.to_s.tidy,
     birth_date: dob,
-    image: box.css('img[src*="/members/"]/@src').text,
+    image: box.css('img[src*="member"]/@src').text,
     type: type,
     term: 2012,
     source: url.to_s,
